@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>LET DRILLS 99</title>
 </head>
 <body>
 
 <div class="nav-wrapper container-fluid mx-auto m-0 p-0">
-<nav class="navbar navbar-expand-lg shadow">
+<nav class="navbar navbar-expand-lg shadow w-100">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img width="90%" src="./assets/logo.png" alt="LET DRILLS 99"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,21 +38,87 @@
 </div>
 
 
-<div class="question-wrapper">
-<div id="quiz-container">
-  <div id="question-container"></div>
-  <div class="m-0 p-0 row">
-    <button id="prev-btn" class="btn btn-sm btn-warning m-1" disabled>Previous</button>
-    <button id="next-btn" class="btn btn-sm btn-primary m-1">Next</button>
-    <button id="submit-btn" class="btn btn-sm btn-success m-1">Submit</button>
-  </div>
-  <div id="result"></div>
-</div>
+
+<div id="menu-container" class="menu-container m-0 p-0 mt-5 row">
+
+      <div class="buttons d-flex justify-content-center col-lg-4 col-md-6 m-0 p-0">
+        <a href="gened-free-questions.html">
+        <button  class="button-select  shadow-lg">
+        <span class="fs-6 fw-bold">FREE Gen Ed Test Drill</span><br>
+        <span class="text-muted">(50-item Drill)</span>
+        </button>
+        </a>
+      </div>
+
+      <div class="buttons d-flex justify-content-center col-lg-4 col-md-6 m-0 p-0">
+          <a href="gened-free-questions.html">
+          <button  class="button-select  shadow-lg">
+          <span class="fs-6 fw-bold">FREE Prof Ed Test Drill</span><br>
+          <span class="text-muted">(50-item Drill)</span>
+          </button>
+          </a>
+      </div>
+
+      <div class="buttons d-flex justify-content-center col-lg-4 col-md-6 m-0 p-0">
+        <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+        <button  class="button-select  shadow-lg">
+        <span class="fs-6 fw-bold">Gen Ed Test Drill</span><br>
+        <span class="text-muted">(Premium - 1500+ Questions)</span>
+        </button>
+        </a>
+      </div> 
+
+      <div class="buttons d-flex justify-content-center col-lg-4 col-md-6 m-0 p-0">
+          <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+          <button  class="button-select  shadow-lg">
+          <span class="fs-6 fw-bold">Prof Ed Test Drill</span><br>
+          <span class="text-muted">(Premium - 1500+ Questions)</span>
+          </button>
+          </a>
+      </div>
+
+      <div class="buttons d-flex justify-content-center col-lg-4 col-md-6 m-0 p-0">
+        <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+        <button  class="button-select  shadow-lg">
+        <span class="fs-6 fw-bold">Timed Gen Ed Test Drill</span><br>
+        <span class="text-muted">(Premium - 1500+ Questions)</span>
+        </button>
+        </a>
+      </div> 
+
+      <div class="buttons d-flex justify-content-center col-lg-4 col-md-6 m-0 p-0">
+        <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+        <button  class="button-select  shadow-lg">
+        <span class="fs-6 fw-bold">Timed Prof Ed Test Drill</span><br>
+        <span class="text-muted">(Premium - 1500+ Questions)</span>
+        </button>
+        </a>
+    </div> 
+
+      <div class="buttons d-flex justify-content-center col-lg-4 col-md-6 m-0 p-0">
+          <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+          <button  class="button-select  shadow-lg">
+          <span class="fs-6 fw-bold">Gen Ed Drills</span><br>
+          <span class="text-muted">(Premium - 1500 Questions and Answers)</span>
+          </button>
+          </a>
+      </div> 
+
+      <div class="buttons d-flex justify-content-center col-lg-4 col-md-6 m-0 p-0">
+          <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+          <button  class="button-select  shadow-lg">
+          <span class="fs-6 fw-bold">Prof Ed Drills</span><br>
+          <span class="text-muted">(Premium - 1500 Questions and Answers)</span>
+          </button>
+          </a>
+      </div>
+
 </div>
 
 
-<!-- Modal -->
-<!-- Modal -->
+
+
+<!-- Upgrade Modal -->
 <div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -69,7 +135,7 @@
     </div>
   </div>
 </div>
-<script src="./js/main.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

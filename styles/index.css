@@ -1,0 +1,50 @@
+body {
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+   
+}
+
+
+.navbar-brand {
+    width:200px;
+}
+
+.navbar {
+    background: rgba(231, 231, 231, 0.473);
+    width: 100%;
+}
+
+.nav-wrapper {
+    width: 100vw;
+}
+
+
+#menu-container {
+    width: 100vw !important;
+    height: 100% !important;
+}
+
+#menu-container .buttons {
+    height: fit-content;
+    padding: 10px !important;
+}
+
+#menu-container .buttons a button {
+    margin: 10px;
+    width: 200px;
+    height: 120px;
+    background: rgba(255, 182, 148, 0.63);
+    border:none;
+    border-radius: 10px;
+}
+
+
+

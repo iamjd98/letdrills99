@@ -1,0 +1,66 @@
+    <div class="buttons-wrapper d-flex align-items-center justify-content-center row m-0 p-0">
+
+        <div class="buttons col-lg-4 col-md-6 m-0 p-0">
+            <a href="gened-free-questions.html">
+            <button ty class="button-select">
+            <span class="fs-6 fw-bold">FREE Gen Ed Quiz Drill</span><br>
+            <span class="text-muted">(50-item Drill)</span>
+            </button>
+            </a>
+        </div>
+
+        <div class="buttons col-lg-4 col-md-6 m-0 p-0">
+            <a href="gened-free-questions.html">
+            <button ty class="button-select">
+            <span class="fs-6 fw-bold">FREE Prof Ed Quiz Drill</span><br>
+            <span class="text-muted">(50-item Drill)</span>
+            </button>
+            </a>
+        </div>
+
+        <div class="buttons col-lg-4 col-md-6 m-0 p-0">
+          <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+          <button ty class="button-select">
+          <span class="fs-6 fw-bold">Gen Ed Quiz Drill</span><br>
+          <span class="text-muted">(Premium - 1500+ Questions)</span>
+          </button>
+          </a>
+      </div> 
+
+        <div class="buttons col-lg-4 col-md-6 m-0 p-0">
+            <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+            <button ty class="button-select">
+            <span class="fs-6 fw-bold">Gen Ed Quiz Drill</span><br>
+            <span class="text-muted">(Premium - 1500+ Questions)</span>
+            </button>
+            </a>
+        </div> 
+
+        <div class="buttons col-lg-4 col-md-6 m-0 p-0">
+            <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+            <button ty class="button-select">
+            <span class="fs-6 fw-bold">Prof Ed Quiz Drill</span><br>
+            <span class="text-muted">(Premium - 1500+ Questions)</span>
+            </button>
+            </a>
+        </div>
+
+        <div class="buttons col-lg-4 col-md-6 m-0 p-0">
+            <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+            <button ty class="button-select">
+            <span class="fs-6 fw-bold">Gen Ed Drills</span><br>
+            <span class="text-muted">(Premium - 1500 QuestionS and Answers)</span>
+            </button>
+            </a>
+        </div> 
+
+        <div class="buttons col-lg-4 col-md-6 m-0 p-0">
+            <a data-bs-toggle="modal" data-bs-target="#upgradeModal" href="#">
+            <button ty class="button-select">
+            <span class="fs-6 fw-bold">Prof Ed Drills</span><br>
+            <span class="text-muted">(Premium - 1500 QuestionS and Answers)</span>
+            </button>
+            </a>
+        </div>
+    
+    </div>
