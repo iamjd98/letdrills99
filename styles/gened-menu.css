@@ -1,0 +1,44 @@
+body {
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+   
+}
+
+
+.navbar-brand {
+    width:200px;
+}
+
+.navbar {
+    background: rgba(231, 231, 231, 0.473);
+    width: 100%;
+}
+
+.nav-wrapper {
+    width: 100vw;
+}
+
+
+.menu-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.buttons button {
+    width: 200px;
+    height: 150px;
+    background-color: rgb(255, 192, 167);
+    border: none;
+    border-radius: 10px;
+}
+

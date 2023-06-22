@@ -110,11 +110,11 @@ var quiz = [
     choices: ["my", "us", "theirs", "ours"],
     correctAnswer: 3
   },  
-  {
-    question: "The cost of a new car is quite expensive for ____ , besides we have more urgent family needs.",
-    choices: ["mine", "me", "us", "them"],
-    correctAnswer: 1
-  },  
+    {
+    question: "What is commensalism?",
+    choices: ["A relationship where both organisms benefit.", "A relationship where one organism benefits while the other is harmed.", "A relationship where two organisms cooperate for mutual benefits.", "A relationship where one organism benefits while the other is unaffected."],
+    correctAnswer: 3
+  },
   {
     question: "He was like an owl in the night. What figure of speech is present?",
     choices: ["Simile", "Hyperbole", "Metaphor", "Personification"],
@@ -166,7 +166,7 @@ var quiz = [
     correctAnswer: 1
   },
   {
-    question: "The date of Philippine Independence was changed from July 4 to July 12 by ____.",
+    question: "The date of Philippine Independence was changed from July 4 to June 12 by ____.",
     choices: ["Benigno Aquino", "Diosdado Macapagal", "Emilio Aguinaldo", "Manuel Quezon"],
     correctAnswer: 1
   },

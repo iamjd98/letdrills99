@@ -1471,7 +1471,7 @@ var quiz = [
       correctAnswer: 1
     },
     {
-      question: "The date of Philippine Independence was changed from July 4 to July 12 by ____.",
+      question: "The date of Philippine Independence was changed from July 4 to June 12 by ____.",
       choices: ["Benigno Aquino", "Diosdado Macapagal", "Emilio Aguinaldo", "Manuel Quezon"],
       correctAnswer: 1
     },
@@ -1490,15 +1490,66 @@ var quiz = [
       choices: ["tuldok", "kuwit", "tudok kuwit", "tutuldok"],
       correctAnswer: 2
     },
-    
-    
-  
-  
-  
-    
-  
-  
-  
+    {
+      question: "What is predation?",
+      choices: ["A relationship where both organisms benefit.", "A relationship where one organism benefits while the other is harmed.", "A relationship where two organisms compete for limited resources.", "A relationship where one organism hunts, captures, and feeds on another organism."],
+      correctAnswer: 3
+    },
+    {
+      question: "What is competition?",
+      choices: ["A relationship where both organisms benefit.", "A relationship where one organism benefits while the other is harmed.", "A relationship where two organisms cooperate for mutual benefits.", "A relationship where two organisms compete for limited resources."],
+      correctAnswer: 3
+    },
+    {
+      question: "What is commensalism?",
+      choices: [" A relationship where both organisms benefit.", " A relationship where one organism benefits while the other is harmed.", "A relationship where two organisms cooperate for mutual benefits.", "A relationship where one organism benefits while the other is unaffected."],
+      correctAnswer: 3
+    },
+    {
+      question: " What is mutualism?",
+      choices: ["A relationship where both organisms benefit.", "A relationship where one organism benefits while the other is harmed.", "A relationship where two organisms compete for limited resources.", "A relationship where one organism benefits while the other is unaffected."],
+      correctAnswer: 2
+    },
+    {
+      question: " What is parasitism?",
+      choices: ["A relationship where both organisms benefit.", "A relationship where one organism benefits while the other is harmed.", "A relationship where two organisms compete for limited resources.", "A relationship where one organism benefits while the other is unaffected."],
+      correctAnswer: 1
+    },
+    {
+      question: " Which of the following best describes an example of predation?",
+      choices: ["A bee collecting nectar from a flower.", "A lioness hunting and capturing a zebra for food.", "Two birds building a nest together.", "A shark and a remora fish swimming together."],
+      correctAnswer: 1
+    },
+    {
+      question: "Which of the following describes an example of competition?",
+      choices: ["A bee collecting nectar from a flower.", "Two squirrels gathering acorns in the same tree.", "Two birds building a nest together.", "A shark and a remora fish swimming together."],
+      correctAnswer: 1
+    },
+    {
+      question: "Tinatawag ng kanyang mga kapatid si rizal na ___.",
+      choices: ["Kuya", "Uncle", "Manong", "Ute"],
+      correctAnswer: 3
+    },    
+    {
+      question: "What is Alzheimer's disease?",
+      choices: ["Memory Loss", "Bone disorder", "Viral infection", "Lung cancer"],
+      correctAnswer: 0
+    },
+    {
+      question: "Who is not included among the Illustrados?",
+      choices: [" José Rizal", "Marcelo H. del Pilar", "Andres Bonifacio", " Antonio Luna"],
+      correctAnswer: 2
+    },
+    {
+      question: "If I had studied very well. My parents ____ bought me a brandnew cellphone.",
+      choices: [" will", "are", "would", " would have"],
+      correctAnswer: 3
+    },
+    {
+      question: "I am very careful when cooking so that i ____ not hurt myself.",
+      choices: ["am", "will", "would", "was"],
+      correctAnswer: 1
+    },
   
   
   ];
@@ -1576,14 +1627,14 @@ var quiz = [
     }
   
     questionContainer.innerHTML = questionsHtml;
-  
+
     if (currentQuestion === 0) {
       prevButton.disabled = true;
     } else {
       prevButton.disabled = false;
     }
   
-    if (currentQuestion >= quiz.length - questionsPerPage) {
+    if (currentQuestion >= quiz.length - 1 || currentQuestion >= 49) {
       nextButton.style.display = "none";
       submitButton.style.display = "block";
     } else {
@@ -1596,22 +1647,24 @@ var quiz = [
     var nextDisabled = true;
     for (var i = 0; i < inputs.length; i++) {
       if (inputs[i].checked) {
-        var selectedAnswerIndex = parseInt(inputs[i].value);
-        if (selectedAnswerIndex === correctAnswerIndex) {
-          nextDisabled = false;
-        }
+        nextDisabled = false;
         break;
       }
     }
     nextButton.disabled = nextDisabled;
   }
   
-  // Event listener for previous button
-  prevButton.addEventListener("click", function () {
+  // Event listener for next button
+  nextButton.addEventListener("click", function () {
     var inputs = document.getElementsByName("choice" + currentQuestion);
     saveSelectedAnswer(inputs);
   
-    currentQuestion--;
+    if (currentQuestion >= 49) {
+      currentQuestion = 49;
+    } else {
+      currentQuestion++;
+    }
+  
     displayQuestions();
   });
   
@@ -1629,56 +1682,50 @@ var quiz = [
   });
   
   
-  // Event listener for next button
-  nextButton.addEventListener("click", function () {
-    var inputs = document.getElementsByName("choice" + currentQuestion);
-    saveSelectedAnswer(inputs);
-  
-    currentQuestion++;
-    displayQuestions();
-  });
-  
-  // Event listener for submit button
-  submitButton.addEventListener("click", function () {
-    var inputs = document.getElementsByName("choice" + currentQuestion);
-    saveSelectedAnswer(inputs);
-  
-    // Calculate score
-    var selectedAnswers = getSelectedAnswers();
-    score = calculateScore(selectedAnswers);
-  
-    // Display result
-    result.innerHTML =
-      "<h3 class='text-success mb-3'>You scored " + score + " out of " + quiz.length + " questions." + "</h3>";
-  
-    // Display answer key
-    result.innerHTML += "<h3>Answer Key:</h3>";
-    for (var i = 0; i < quiz.length; i++) {
+// Event listener for submit button
+submitButton.addEventListener("click", function () {
+  var inputs = document.getElementsByName("choice" + currentQuestion);
+  saveSelectedAnswer(inputs);
+
+  // Calculate score
+  var selectedAnswers = getSelectedAnswers();
+  score = calculateScore(selectedAnswers);
+
+  // Display result
+  result.innerHTML =
+    "<h3 class='text-success mb-3'>You scored " + score + " out of " + "50 questions." + "</h3>";
+
+  // Display answer key for answered questions
+  result.innerHTML += "<h3>Answer Key:</h3>";
+  for (var i = 0; i < quiz.length; i++) {
+    if (quiz[i].selectedAnswer !== undefined) {
       var questionNumber = i + 1;
       var question = quiz[i].question;
       var correctAnswer = quiz[i].choices[quiz[i].correctAnswer];
-      var selectedAnswer = quiz[i].selectedAnswer;
-      var isAnswerCorrect = selectedAnswer !== undefined && selectedAnswer === quiz[i].correctAnswer;
-  
+      var selectedAnswer = quiz[i].choices[quiz[i].selectedAnswer];
+      var isAnswerCorrect = quiz[i].selectedAnswer === quiz[i].correctAnswer;
+
       result.innerHTML += "<p><strong>Question " +
         questionNumber +
         ":</strong> " +
         question +
         "</p>";
-  
+
       if (isAnswerCorrect) {
         result.innerHTML += "<p class='text-success'><strong>Correct Answer: " + correctAnswer + "</strong></p>";
       } else {
-        result.innerHTML += "<p style='color: red'><strong>Your Answer: " + quiz[i].choices[selectedAnswer] + "</strong></p>";
+        result.innerHTML += "<p style='color: red'><strong>Your Answer: " + selectedAnswer + "</strong></p>";
+        result.innerHTML += "<p class='text-success'><strong>Correct Answer: " + correctAnswer + "</strong></p>";
       }
     }
-  
-    // Hide the questions and buttons
-    questionContainer.style.display = "none";
-    prevButton.style.display = "none";
-    nextButton.style.display = "none";
-    submitButton.style.display = "none";
-  });
+  }
+
+  // Hide the questions and buttons
+  questionContainer.style.display = "none";
+  prevButton.style.display = "none";
+  nextButton.style.display = "none";
+  submitButton.style.display = "none";
+});
   
   // Function to save the selected answer
   function saveSelectedAnswer(inputs) {
@@ -1733,5 +1780,16 @@ var quiz = [
   
   // Call the initializeQuiz function to start the quiz
   initializeQuiz();
+
+
+  function goToMainMenu() {
+    // Redirect to index.html
+    window.location.href = "dashboard.html";
+  }
+  
+  function refreshPage() {
+    // Redirect to index.html
+    window.location.href = "gened-50.html";
+  }
   
   
