@@ -1789,11 +1789,11 @@ submitButton.addEventListener("click", function () {
   
   function refreshPage() {
     // Redirect to index.html
-    window.location.href = "gened-50.php";
+    window.location.href = "profed-50.php";
   }
   
-  function GenEdMenuPage() {
+  function ProfEdMenuPage() {
     // Redirect to index.html
-    window.location.href = "gened-menu.php";
+    window.location.href = "profed-menu.php";
   }
   

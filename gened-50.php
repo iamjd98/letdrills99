@@ -1,10 +1,14 @@
+<?php
+include 'session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/gened-free-questions.css">
+    <link rel="stylesheet" href="./styles/gened-prem.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>LET DRILLS 99</title>
 </head>
@@ -19,16 +23,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active fs-5 text-light-emphasis ms-2 me-2" aria-current="page" href="#">How it Works</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active fs-5 text-light-emphasis ms-2 me-2" aria-current="page" href="#">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active fs-5 text-light-emphasis ms-2 me-2" aria-current="page" href="#">FAQ's</a>
-        </li>
       </ul>
+      <span class="fw-bold fs-6">Hello teacher <span class="teacher-name"><?php echo $fname . ' ' . $lname; ?>!</span> </span>
     </div>
   </div>
 </nav>
@@ -54,29 +50,11 @@
 
     <button onclick="goToMainMenu()" class="btn btn-sm btn-success w-25">Menu</button></a>
     <button onclick="refreshPage()" class="btn btn-sm btn-success w-25">Restart</button></a>
-    <button class="btn btn-sm btn-success w-25" type="button" data-bs-toggle="modal" data-bs-target="#upgradeModal">Upgrade</button></a>
+    <button onclick="GenEdMenuPage()" class="btn btn-sm btn-success w-25" type="button">Gen Ed Menu</button>
 
   </div>
 </div>
 
-
-<!-- Upgrade Modal -->
-<div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Upgrade</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h5 class="text-success"> Your account is already upgraded! </h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script src="./js/gened-50.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

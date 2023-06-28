@@ -27,26 +27,34 @@ body {
 }
 
 
-.menu-container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
+#menu-container {
+    width: 100vw !important;
+    height: 100% !important;
 }
 
-.buttons button {
+#menu-container .buttons {
+    height: fit-content;
+    padding: 10px !important;
+}
+
+#menu-container .buttons a button {
+    margin: 10px;
     width: 200px;
-    height: 150px;
-    background-color: rgb(255, 192, 167);
-    border: none;
+    height: 120px;
+    background: rgba(255, 182, 148, 0.63);
+    border:none;
     border-radius: 10px;
+}
+
+#menu-container .buttons button:hover {
+    background-color: rgb(255, 160, 153);
 }
 
 .teacher-name {
     color: rgb(233, 48, 79);
 }
 
-.backToMenuBtn {
+.signOutBtn {
     font-weight: bold;
     border: none;
     background: rgb(255, 192, 167);
@@ -54,11 +62,10 @@ body {
     border-radius: 10px;
 }
 
-.backToMenuBtn:hover {
+.signOutBtn:hover {
     cursor: pointer;
-    background-color: rgb(255, 160, 153);
+    background-color: rgb(255, 77, 65);
 }
 
-.buttons button:hover {
-    background-color: rgb(255, 160, 153);
-}
+
+

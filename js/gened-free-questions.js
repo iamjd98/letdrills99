@@ -478,12 +478,12 @@ initializeQuiz();
 
 function goToMainMenu() {
   // Redirect to index.html
-  window.location.href = "index.html";
+  window.location.href = "index.php";
 }
 
 function refreshPage() {
   // Redirect to index.html
-  window.location.href = "gened-free-questions.html";
+  window.location.href = "gened-free-questions.php";
 }
 
 

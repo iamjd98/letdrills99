@@ -46,5 +46,9 @@ body {
     border-radius: 10px;
 }
 
+#menu-container .buttons button:hover {
+    background-color: rgb(255, 160, 153);
+}
+
 
 

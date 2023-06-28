@@ -1634,7 +1634,7 @@ var quiz = [
       prevButton.disabled = false;
     }
   
-    if (currentQuestion >= quiz.length - 1 || currentQuestion >= 49) {
+    if (currentQuestion >= quiz.length - 1 || currentQuestion >= 149) {
       nextButton.style.display = "none";
       submitButton.style.display = "block";
     } else {
@@ -1659,8 +1659,8 @@ var quiz = [
     var inputs = document.getElementsByName("choice" + currentQuestion);
     saveSelectedAnswer(inputs);
   
-    if (currentQuestion >= 49) {
-      currentQuestion = 49;
+    if (currentQuestion >= 149) {
+      currentQuestion = 149;
     } else {
       currentQuestion++;
     }
@@ -1789,11 +1789,12 @@ submitButton.addEventListener("click", function () {
   
   function refreshPage() {
     // Redirect to index.html
-    window.location.href = "gened-50.php";
+    window.location.href = "profed-150.php";
+  }
+
+  function ProfEdMenuPage() {
+    // Redirect to index.html
+    window.location.href = "profed-menu.php";
   }
   
-  function GenEdMenuPage() {
-    // Redirect to index.html
-    window.location.href = "gened-menu.php";
-  }
   
