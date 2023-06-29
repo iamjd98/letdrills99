@@ -19,3 +19,12 @@ body {
     height: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    .input-wrapper {
+        height: fit-content;
+        padding: 30px;
+        width: 90% !important;
+
+    }
+  }
+
