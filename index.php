@@ -1,3 +1,17 @@
+<?php
+
+session_start(); // Start the session
+
+// Check if the user is already logged in
+if (isset($_SESSION['user_id'])) {
+    // User is already logged in, redirect to dashboard.php
+    header("Location: dashboard.php");
+    exit();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Welcome to LET Drills by Tine</title>
 </head>
@@ -168,16 +183,17 @@
       <div class="modal-body">
 
       <form method="post" action="userlogin.php">
-      <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control" name="email" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" name="password" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Log In</button>
-        </form>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Log In</button>
+</form>
+
 
       </div>
       <div class="modal-footer">

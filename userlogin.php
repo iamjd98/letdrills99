@@ -14,27 +14,22 @@ $result = $mysqli->query($sql);
 
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
-    $existingSession = $row['session_id'];
+    $user_id = $row['user_id'];
 
-    // Check if the user is already logged in on another device
-    if (!empty($existingSession) && $existingSession != session_id()) {
-        // User is already logged in on another device, display an alert and redirect to index.php
-        echo '<script>alert("Already logged in on another device. Try to logout on another device!");</script>';
-        echo '<script>window.location.href = "index.php";</script>';
-        exit();
-    }
+    // Generate a unique login token
+    $login_token = bin2hex(random_bytes(16));
 
-    // Set the new session ID for the user
-    $_SESSION['user_id'] = $row['user_id'];
+    // Store the login token in the active_users table
+    $updateSql = "UPDATE active_users SET login_token = '$login_token' WHERE user_id = '$user_id'";
+    $mysqli->query($updateSql);
+
+    // Set the session variables
+    $_SESSION['user_id'] = $user_id;
     $_SESSION['fname'] = $row['fname'];
     $_SESSION['lname'] = $row['lname'];
     $_SESSION['email'] = $row['email'];
     $_SESSION['date_added'] = $row['date_added'];
-    $_SESSION['session_id'] = session_id();
-
-    // Update the active_users table with the new session ID
-    $updateSql = "UPDATE active_users SET session_id = '".session_id()."' WHERE email = '$email'";
-    $mysqli->query($updateSql);
+    $_SESSION['login_token'] = $login_token;
 
     // Redirect to dashboard.php
     header("Location: dashboard.php");
