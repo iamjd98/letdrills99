@@ -18,11 +18,31 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="LET DRILLS BY TINE" />
+    <meta property="og:image" content="https://i.ibb.co/q0KCPK5/thumnail.png" />
+    <meta property="og:description" content="Let Drills by Tine Web App is a free Drill Web App for aspiring LPTs in the Philippines. This web app will help you develop your testmanship skills and time management skills." />
+    <meta property="og:url" content="https://letdrillsbytine.online/" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Welcome to LET Drills by Tine</title>
 </head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1808281407558313"
+     crossorigin="anonymous"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC32ZMNBFP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VC32ZMNBFP');
+</script>
+
 <body>
 
 <div class="nav-wrapper container-fluid mx-auto m-0 p-0">
